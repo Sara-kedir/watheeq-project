@@ -4,14 +4,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// ✅ بيانات مشروعك من Firebase Console 
+// ✅ Read Firebase config from environment variables (set in Cloudflare Pages)
 const firebaseConfig = {
-  apiKey: "AIzaSyBy-98A_rSsEe8xX8jcSFBVJgxC4WjeCak",
-  authDomain: "wathiq-9761e.firebaseapp.com",
-  projectId: "wathiq-9761e",
-  storageBucket: "wathiq-9761e.firebasestorage.app",
-  messagingSenderId: "159174686365",
-  appId: "1:159174686365:web:d65f16e564f5cd344dc674",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY as string,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID as string,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET as string,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID as string,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID as string,
 };
 
 // ✅ تهيئة التطبيق
